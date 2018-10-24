@@ -11,14 +11,19 @@ body {
 
 header {
     background-image: url(https://thumb1.shutterstock.com/mosaic_250/163225782/747618916/stock-photo-vintage-whitewash-painted-rustic-old-wood-plank-wall-textured-background-faded-washed-natural-wood-747618916.jpg);
-    padding: 10px 150px 10px 150px;
+    padding: 5px 150px 5px 150px;
     margin-bottom: 40px;
 }
 
-h1 {
-    font-size: 3em;
-    text-align: center;
-    /* color: rgb(58, 107, 87); */
+header h1 {
+    font-size: 4em;
+    font-style: italic
+}
+
+header h2 {
+    font-size: 2em;
+    margin-left: 15%;
+    font-style: italic
 }
 
 #sculptureGarden {
@@ -27,19 +32,24 @@ h1 {
     border: 5px solid rgb(58, 107, 87);
 }
 
-#intro {
-    float: right;
-    box-sizing: border-box;
-    width: 48%;
-    padding: 0px 20px 0px 20px;
+nav ul {
+    padding-top: 100px;
 }
 
-#quiz {
+nav ul li {
+    padding-bottom: 75px;
+    font-size: 2.5em;
+    text-align: center;
+    font-weight: bolder;
+}
+
+#funFacts {
+    box-sizing: border-box;
+    width: 100%;
     margin-top: 40px;
     padding: 20px;
     background-image: url(https://thumb1.shutterstock.com/mosaic_250/163225782/747618916/stock-photo-vintage-whitewash-painted-rustic-old-wood-plank-wall-textured-background-faded-washed-natural-wood-747618916.jpg);
     float: left;
-    box-sizing: border-box;
 }
 
 footer {
