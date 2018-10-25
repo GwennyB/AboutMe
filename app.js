@@ -10,6 +10,7 @@ var incorrect = 'Awww...too bad. It\'s like you don\'t even know me.';
 
 // set up tally for correct answers
 var totalCorrect = 0;
+console.log('totalCorrect', totalCorrect);
 
 // Question about middle name
 console.log('answerMiddlename', answerMiddlename);
@@ -20,7 +21,8 @@ console.log('answerMiddlename', answerMiddlename);
 // Answer evaluation and response for question about middle name
 if (answerMiddlename === 'Y' || answerMiddlename === 'YES') {
   alert(correct + correctMiddlename);
-  totalCorrect++;
+  totalCorrect++; // iterate tally since response is correct
+  console.log('totalCorrect', totalCorrect);
 } else if (answerMiddlename === 'N' || answerMiddlename === 'NO') {
   alert(incorrect + correctMiddlename);
 } else {
@@ -36,7 +38,8 @@ console.log('answerBirthplace', answerBirthplace);
 // Answer evaluation and response for question about birthplace
 if (answerBirthplace === 'Y' || answerBirthplace === 'YES') {
   alert(correct + correctBirthplace);
-  totalCorrect++;
+  totalCorrect++; // iterate tally since response is correct
+  console.log('totalCorrect', totalCorrect);
 } else if (answerBirthplace === 'N' || answerBirthplace === 'NO') {
   alert(incorrect + correctBirthplace);
 } else {
@@ -52,7 +55,8 @@ console.log('answerCollege', answerCollege);
 // Answer evaluation and response for question about college
 if (answerCollege === 'Y' || answerCollege === 'YES') {
   alert(correct + correctCollege);
-  totalCorrect++;
+  totalCorrect++; // iterate tally since response is correct
+  console.log('totalCorrect', totalCorrect);
 } else if (answerCollege === 'N' || answerCollege === 'NO') {
   alert(incorrect + correctCollege);
 } else {
@@ -68,7 +72,8 @@ console.log('answerKids', answerKids);
 // Answer evaluation and response for question about kids
 if (answerKids === 'N' || answerKids === 'NO') {
   alert(correct + correctKids);
-  totalCorrect++;
+  totalCorrect++; // iterate tally since response is correct
+  console.log('totalCorrect', totalCorrect);
 } else if (answerKids === 'Y' || answerKids === 'YES') {
   alert(incorrect + correctKids);
 } else {
@@ -84,7 +89,8 @@ console.log('answerWedding', answerWedding);
 // Answer evaluation and response for question about wedding
 if (answerWedding === 'N' || answerWedding === 'NO') {
   alert(correct + correctWedding);
-  totalCorrect++;
+  totalCorrect++; // iterate tally since response is correct
+  console.log('totalCorrect', totalCorrect);
 } else if (answerWedding === 'Y' || answerWedding === 'YES') {
   alert(incorrect + correctWedding);
 } else {
@@ -96,7 +102,8 @@ alert('Whew... those were tough! But you can handle more. The next questions are
 
 // Question about Boeing tenure
 console.log('answerBoeing', answerBoeing);
-var triesLeft = 4; 
+var triesLeft = 4; //set initial number of tries for this question
+console.log('triesLeft', triesLeft);
 var answerBoeing = parseInt(prompt('How many (whole) years did I work at Boeing? (You have ' + triesLeft + ' tries.)'));
 var correctBoeing = ('I spent 11 years at Boeing, and I learned more than I can recount.');
 console.log('answerBoeing', answerBoeing);
@@ -105,16 +112,20 @@ console.log('answerBoeing', answerBoeing);
 while(triesLeft > 1) {
   if (answerBoeing === 11) {
     alert('That\'s right! ' + correctBoeing);
-    totalCorrect++;
+    totalCorrect++; // iterate tally since response is correct
+    console.log('totalCorrect', totalCorrect);
     break;
   } else if (answerBoeing < 11 && answerBoeing > 0) {
-    triesLeft--;
+    triesLeft--; // decrement guess counter for incorrect response
+    console.log('triesLeft', triesLeft);
     answerBoeing = parseInt(prompt('Nope... more than that. (You have ' + triesLeft + ' tries left.)'));
   } else if (answerBoeing > 11 && answerBoeing < 41) {
-    triesLeft--;
+    triesLeft--; // decrement guess counter for incorrect response
+    console.log('triesLeft', triesLeft);
     answerBoeing = parseInt(prompt('Nope... less than that. (You have ' + triesLeft + ' tries left.)'));
   } else {
-    triesLeft--;
+    triesLeft--; // decrement guess counter for incorrect response
+    console.log('triesLeft', triesLeft);
     answerBoeing = parseInt(prompt('That\'s not even possible! Try again. (You have ' + triesLeft + ' tries left.)'));
   }
 }
@@ -123,25 +134,29 @@ if (triesLeft === 0) {
 }
 
 // Question about cities
-console.log('answerBoeing', answerBoeing);
-triesLeft = 6; 
-var cities = ['KIRKLAND', 'MILL CREEK', 'SNOHOMISH'];
-var answerCities = prompt('Can you name a Washington city where I\'ve lived? (You have ' + triesLeft + ' tries.)').toUpperCase();
+console.log('answerCities', answerCities);
+triesLeft = 6; // set initial guess counter for this question
+var cities = ['KIRKLAND', 'MILL CREEK', 'SNOHOMISH']; // acceptable responses
+var answerCities = prompt('Can you name a Washington city where I\'ve lived? (You have ' + triesLeft + ' tries.)').toUpperCase(); //initial prompt; burns 1st try
+triesLeft--; // decrement guess counter for initial response
+console.log('triesLeft', triesLeft);
 var correctCities = ('I\'ve called Mill Creek, Snohomish, and Kirkland home since moving to Washington in 2008.');
 console.log('answerCities', answerCities);
 
 // Answer evaluation and response for question about cities
 while(triesLeft > 1) {
   switch(answerCities) {
-  case 'KIRKLAND':
-  case 'MILL CREEK':
-  case 'SNOHOMISH':
+  case cities[0]:
+  case cities[1]:
+  case cities[2]:
     alert('Yep! ' + correctCities);
-    totalCorrect++;
+    totalCorrect++; // iterate tally since response is correct
+    console.log('totalCorrect', totalCorrect);
     triesLeft = 0; // eject from while loop
     break;
   default:
-    triesLeft--;
+    triesLeft--; // decrement guess counter for incorrect response
+    console.log('triesLeft', triesLeft);
     answerCities = prompt('I haven\'t lived in ' + answerCities + '. Try again - you\'ve got ' + triesLeft + ' tries left.').toUpperCase();
     if (triesLeft === 0) {
       alert('That was a tough one. ' + correctCities);
