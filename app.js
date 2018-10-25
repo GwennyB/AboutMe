@@ -2,7 +2,7 @@
 
 // Greet visitor and find out his/her name.
 var userName = prompt('Hello! My name is Gwen - what\'s yours?');
-alert('Welcome, ' + userName + '! I\'m so glad you\'ve stopped by for a visit.  Heads up, ' + userName + '...there are questions ahead to see how well you know me! You can answer with \'yes\', \'no\', \'y\', or \'no\' (but it isn\'t case sensitive, so you can yell if you want to). See this blue button below that says "OK"? Click it when you\'re ready to test your Gwen Trivia.');
+alert('Welcome, ' + userName + '! I\'m so glad you\'ve stopped by for a visit.  Heads up, ' + userName + '...there are questions ahead to see how well you know me! You can answer with \'yes\', \'no\', \'y\', or \'n\' (but it isn\'t case sensitive, so you can yell if you want to). See this blue button below that says "OK"? Click it when you\'re ready to test your Gwen Trivia.');
 
 // Create canned responses for right and wrong answers (to avoid having to repeat them).
 var correct = 'That\'s right! (Wait...did you peek at the answer?)';
