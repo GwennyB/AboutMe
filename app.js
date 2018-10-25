@@ -11,85 +11,85 @@ var incorrect = 'Awww...too bad. It\'s like you don\'t even know me.';
 // set up tally for correct answers
 var totalCorrect = 0;
 
-// // Question about middle name
-// console.log('answerMiddlename', answerMiddlename);
-// var answerMiddlename = prompt('Is my middle name \'Yvonne\'?').toUpperCase();
-// var correctMiddlename = ' My middle name is indeed \'Yvonne\'. I think my mother was heavily drugged when she named me.';
-// console.log('answerMiddlename', answerMiddlename);
+// Question about middle name
+console.log('answerMiddlename', answerMiddlename);
+var answerMiddlename = prompt('Is my middle name \'Yvonne\'?').toUpperCase();
+var correctMiddlename = ' My middle name is indeed \'Yvonne\'. I think my mother was heavily drugged when she named me.';
+console.log('answerMiddlename', answerMiddlename);
 
-// // Answer evaluation and response for question about middle name
-// if (answerMiddlename === 'Y' || answerMiddlename === 'YES') {
-//   alert(correct + correctMiddlename);
-//   totalCorrect++;
-// } else if (answerMiddlename === 'N' || answerMiddlename === 'NO') {
-//   alert(incorrect + correctMiddlename);
-// } else {
-//   alert('Oops! You answered ' + answerMiddlename + ', which isn\'t y/yes/n/no. Didn\'t we talk about how to do this? ' + correctMiddlename);
-// }
+// Answer evaluation and response for question about middle name
+if (answerMiddlename === 'Y' || answerMiddlename === 'YES') {
+  alert(correct + correctMiddlename);
+  totalCorrect++;
+} else if (answerMiddlename === 'N' || answerMiddlename === 'NO') {
+  alert(incorrect + correctMiddlename);
+} else {
+  alert('Oops! You answered ' + answerMiddlename + ', which isn\'t y/yes/n/no. Didn\'t we talk about how to do this? ' + correctMiddlename);
+}
 
-// // Question about birthplace
-// console.log('answerBirthplace', answerBirthplace);
-// var answerBirthplace = prompt('Was I born in Texas?').toUpperCase();
-// var correctBirthplace = ' I was born in Houston. Almost in a taxi, in fact.  How cliche...';
-// console.log('answerBirthplace', answerBirthplace);
+// Question about birthplace
+console.log('answerBirthplace', answerBirthplace);
+var answerBirthplace = prompt('Was I born in Texas?').toUpperCase();
+var correctBirthplace = ' I was born in Houston. Almost in a taxi, in fact.  How cliche...';
+console.log('answerBirthplace', answerBirthplace);
 
-// // Answer evaluation and response for question about birthplace
-// if (answerBirthplace === 'Y' || answerBirthplace === 'YES') {
-//   alert(correct + correctBirthplace);
-//   totalCorrect++;
-// } else if (answerBirthplace === 'N' || answerBirthplace === 'NO') {
-//   alert(incorrect + correctBirthplace);
-// } else {
-//   alert('Oops! You answered ' + answerBirthplace + ', which isn\'t y/yes/n/no. Didn\'t we talk about how to do this? ' + correctBirthplace);
-// }
+// Answer evaluation and response for question about birthplace
+if (answerBirthplace === 'Y' || answerBirthplace === 'YES') {
+  alert(correct + correctBirthplace);
+  totalCorrect++;
+} else if (answerBirthplace === 'N' || answerBirthplace === 'NO') {
+  alert(incorrect + correctBirthplace);
+} else {
+  alert('Oops! You answered ' + answerBirthplace + ', which isn\'t y/yes/n/no. Didn\'t we talk about how to do this? ' + correctBirthplace);
+}
 
-// // Question about college
-// console.log('answerCollege', answerCollege);
-// var answerCollege = prompt('Did I go to college?').toUpperCase();
-// var correctCollege = ' I studied Mechanical Engineering at The University of Texas at Austin.  And I ROCKED it.';
-// console.log('answerCollege', answerCollege);
+// Question about college
+console.log('answerCollege', answerCollege);
+var answerCollege = prompt('Did I go to college?').toUpperCase();
+var correctCollege = ' I studied Mechanical Engineering at The University of Texas at Austin.  And I ROCKED it.';
+console.log('answerCollege', answerCollege);
 
-// // Answer evaluation and response for question about college
-// if (answerCollege === 'Y' || answerCollege === 'YES') {
-//   alert(correct + correctCollege);
-//   totalCorrect++;
-// } else if (answerCollege === 'N' || answerCollege === 'NO') {
-//   alert(incorrect + correctCollege);
-// } else {
-//   alert('Oops! You answered ' + answerCollege + ', which isn\'t y/yes/n/no. Didn\'t we talk about how to do this? ' + correctCollege);
-// }
+// Answer evaluation and response for question about college
+if (answerCollege === 'Y' || answerCollege === 'YES') {
+  alert(correct + correctCollege);
+  totalCorrect++;
+} else if (answerCollege === 'N' || answerCollege === 'NO') {
+  alert(incorrect + correctCollege);
+} else {
+  alert('Oops! You answered ' + answerCollege + ', which isn\'t y/yes/n/no. Didn\'t we talk about how to do this? ' + correctCollege);
+}
 
-// // Question about kids
-// console.log('answerKids', answerKids);
-// var answerKids = prompt('Do I have 2 kids?').toUpperCase();
-// var correctKids = ' I have 3 including my stepchildren! They\'re all grown and gone...sad face.';
-// console.log('answerKids', answerKids);
+// Question about kids
+console.log('answerKids', answerKids);
+var answerKids = prompt('Do I have 2 kids?').toUpperCase();
+var correctKids = ' I have 3 including my stepchildren! They\'re all grown and gone...sad face.';
+console.log('answerKids', answerKids);
 
-// // Answer evaluation and response for question about kids
-// if (answerKids === 'N' || answerKids === 'NO') {
-//   alert(correct + correctKids);
-//   totalCorrect++;
-// } else if (answerKids === 'Y' || answerKids === 'YES') {
-//   alert(incorrect + correctKids);
-// } else {
-//   alert('Oops! You answered ' + answerKids + ', which isn\'t y/yes/n/no. Didn\'t we talk about how to do this? ' + correctKids);
-// }
+// Answer evaluation and response for question about kids
+if (answerKids === 'N' || answerKids === 'NO') {
+  alert(correct + correctKids);
+  totalCorrect++;
+} else if (answerKids === 'Y' || answerKids === 'YES') {
+  alert(incorrect + correctKids);
+} else {
+  alert('Oops! You answered ' + answerKids + ', which isn\'t y/yes/n/no. Didn\'t we talk about how to do this? ' + correctKids);
+}
 
-// // Question about wedding
-// console.log('answerWedding', answerWedding);
-// var answerWedding = prompt('Will I get married in Hawaii?').toUpperCase();
-// var correctWedding = ' In fact, my dear friends will be married in Hawaii in March, just 2 weeks before I\'m married in FIJI (squeeeee!). I\'ll be on the first flight to Honolulu after I graduate from Code 401!';
-// console.log('answerWedding', answerWedding);
+// Question about wedding
+console.log('answerWedding', answerWedding);
+var answerWedding = prompt('Will I get married in Hawaii?').toUpperCase();
+var correctWedding = ' In fact, my dear friends will be married in Hawaii in March, just 2 weeks before I\'m married in FIJI (squeeeee!). I\'ll be on the first flight to Honolulu after I graduate from Code 401!';
+console.log('answerWedding', answerWedding);
 
-// // Answer evaluation and response for question about wedding
-// if (answerWedding === 'N' || answerWedding === 'NO') {
-//   alert(correct + correctWedding);
-//   totalCorrect++;
-// } else if (answerWedding === 'Y' || answerWedding === 'YES') {
-//   alert(incorrect + correctWedding);
-// } else {
-//   alert('Oops! You answered ' + answerWedding + ', which isn\'t y/yes/n/no. Didn\'t we talk about how to do this? ' + correctWedding);
-// }
+// Answer evaluation and response for question about wedding
+if (answerWedding === 'N' || answerWedding === 'NO') {
+  alert(correct + correctWedding);
+  totalCorrect++;
+} else if (answerWedding === 'Y' || answerWedding === 'YES') {
+  alert(incorrect + correctWedding);
+} else {
+  alert('Oops! You answered ' + answerWedding + ', which isn\'t y/yes/n/no. Didn\'t we talk about how to do this? ' + correctWedding);
+}
 
 // Reset user instructions
 alert('Whew... those were tough! But you can handle more. The next questions are a bit tougher because they aren\'t yes or no. I\'ll give you a few chances for each to be fair. Ready?');
@@ -122,7 +122,32 @@ if (triesLeft === 0) {
   alert('That was a tough one. ' + correctBoeing);
 }
 
+// Question about cities
+console.log('answerBoeing', answerBoeing);
+triesLeft = 6; 
+var cities = ['KIRKLAND', 'MILL CREEK', 'SNOHOMISH'];
+var answerCities = prompt('Can you name a Washington city where I\'ve lived? (You have ' + triesLeft + ' tries.)').toUpperCase();
+var correctCities = ('I\'ve called Mill Creek, Snohomish, and Kirkland home since moving to Washington in 2008.');
+console.log('answerCities', answerCities);
 
+// Answer evaluation and response for question about cities
+while(triesLeft > 1) {
+  switch(answerCities) {
+  case 'KIRKLAND':
+  case 'MILL CREEK':
+  case 'SNOHOMISH':
+    alert('Yep! ' + correctCities);
+    totalCorrect++;
+    triesLeft = 0; // eject from while loop
+    break;
+  default:
+    triesLeft--;
+    answerCities = prompt('I haven\'t lived in ' + answerCities + '. Try again - you\'ve got ' + triesLeft + ' tries left.').toUpperCase();
+    if (triesLeft === 0) {
+      alert('That was a tough one. ' + correctCities);
+    }
+  }
+}
 
 // Report total correct answers
 if (totalCorrect>=4) {
