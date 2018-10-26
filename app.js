@@ -10,7 +10,6 @@ for(var i=1; i<6; i++) {
   totalCorrect += firstFiveQuestions(i);
 }
 
-
 // Reset user instructions
 alert('Whew... those were tough! But you can handle more. The next questions are a bit tougher because they aren\'t yes or no. I\'ll give you a few chances for each to be fair. Ready?');
 console.log ('totalCorrect', totalCorrect);
@@ -30,33 +29,53 @@ if (totalCorrect>=4) {
 
 function firstFiveQuestions (arraysIndex) {
   //array for questions
-  var questions = [0, 'Is my middle name \'Yvonne\'?', 'Was I born in Texas?', 'Did I go to college?', 'Do I have 2 kids?', 'Will I get married in Hawaii?'];
+  var questions = [0, 
+    'Is my middle name \'Yvonne\'?', 
+    'Was I born in Texas?', 
+    'Did I go to college?', 
+    'Do I have 2 kids?', 
+    'Will I get married in Hawaii?'];
   console.log(questions);
   //array for answers
-  var correctAnswers = [0, 'YES', 'YES', 'YES', 'NO', 'NO'];
-  //array for positive feedback to user
-  var positiveFeedback = [0, ' My middle name is indeed \'Yvonne\'. I think my mother was heavily drugged when she named me.', ' I was born in Houston. Almost in a taxi, in fact.  How cliche...', ' I studied Mechanical Engineering at The University of Texas at Austin.  And I ROCKED it.', ' I have 3 including my stepchildren! They\'re all grown and gone...sad face.', ' In fact, my dear friends will be married in Hawaii in March, just 2 weeks before I\'m married in FIJI (squeeeee!). I\'ll be on the first flight to Honolulu after I graduate from Code 401!'];
+  var correctAnswers = [0, 
+    'YES', 
+    'YES', 
+    'YES', 
+    'NO', 
+    'NO'];
+    //array for positive feedback to user
+  var positiveFeedback = [0, 
+    ' My middle name is indeed \'Yvonne\'. I think my mother was heavily drugged when she named me.', 
+    ' I was born in Houston. Almost in a taxi, in fact.  How cliche...', 
+    ' I studied Mechanical Engineering at The University of Texas at Austin.  And I ROCKED it.', 
+    ' I have 3 including my stepchildren! They\'re all grown and gone...sad face.', 
+    ' In fact, my dear friends will be married in Hawaii in March, just 2 weeks before I\'m married in FIJI (squeeeee!). I\'ll be on the first flight to Honolulu after I graduate from Code 401!'];
+    // canned response for right answer - to be appended with more specific detail in 'positiveFeedback[]'
   var correct = 'That\'s right! (Wait...did you peek at the answer?)';
-  //prompt with question and log response
-  var response = prompt(questions[arraysIndex]).toUpperCase();
-  console.log('response', response);
+  console.log('response', response); // confirm that user response is accepted into var 'response'
+  
+  // initiate and confirm correct answer tallying
   var correctTally = 0; // total correct tally for return to main code
   console.log('correctTally', correctTally);
+  //prompt with question and log response
+  var response = prompt(questions[arraysIndex]).toUpperCase();
+  
   //check response against correct answer
   if (response === correctAnswers[arraysIndex].substring(0,1) || response === correctAnswers[arraysIndex]) {  //use truncated answer to accommodate shorthand response
-    // positive feedback to user
+    // correct response - give positive feedback to user
     alert(correct + positiveFeedback[arraysIndex]);
     correctTally++;
     console.log('correctTally', correctTally);
   } else {
-    // constructive feedback to user
+    // incorrect response - give 'constructive' feedback to user
     alert('Awww...too bad. It\'s like you don\'t even know me.');
   }
-  //return correct boolean (for use in total correct tally)
+  // return 0 for incorrect and 1 for correct (to be added to 'totalCorrect' for final tally)
   console.log('correctTally', correctTally);
   return correctTally;
 }
-function questionBoeing() {
+
+function questionBoeing() {  // this is 'question 6' in the assignment
   // Question about Boeing tenure
   var correctTally = 0; // total correct tally for return to main code
   console.log('correctTally', correctTally);
@@ -95,17 +114,17 @@ function questionBoeing() {
 }
 
 // Question about cities
-function questionCities () {
+function questionCities () {   // this is 'question 7' in the assignment
   var correctTally = 0; // total correct tally for return to main code
   console.log('correctTally', correctTally);
   console.log('answerCities', answerCities);
   console.log('triesLeft', triesLeft);
   var triesLeft = 6; // set initial guess counter for this question
   console.log('triesLeft', triesLeft);
-  var cities = ['KIRKLAND', 'MILL CREEK', 'SNOHOMISH']; // acceptable responses
+  var cities = ['KIRKLAND', 'MILL CREEK', 'SNOHOMISH', 'LYNNWOOD']; // acceptable responses
   var answerCities = prompt('Can you name a Washington city where I\'ve lived? (You have ' + triesLeft + ' tries.)').toUpperCase(); //initial prompt; burns 1st try
   console.log('triesLeft', triesLeft);
-  --triesLeft; // decrement guess counter for initial response
+  triesLeft--; // decrement guess counter for initial response
   console.log('triesLeft', triesLeft);
   var correctCities = ('I\'ve called Mill Creek, Snohomish, and Kirkland home since moving to Washington in 2008.');
   console.log('answerCities', answerCities);
@@ -113,10 +132,11 @@ function questionCities () {
   // Answer evaluation and response for question about cities
   while(triesLeft > 0) {
     answerCities = prompt('I haven\'t lived in ' + answerCities + '. Try again - you\'ve got ' + triesLeft + ' tries left.').toUpperCase();
-    switch(answerCities) {
+    switch(answerCities) {   // since array is short (4 elements), used switch instead of for to reduce array traversals; would use for loop for array that's long or indeterminate size
     case cities[0]:
     case cities[1]:
     case cities[2]:
+    case cities[3]:
       console.log('entered case cities');
       alert('Yep! ' + correctCities);
       console.log ('before correct tally');
@@ -127,7 +147,7 @@ function questionCities () {
       break;
     default:
       console.log('triesLeft', triesLeft);
-      --triesLeft; // decrement guess counter for incorrect response
+      triesLeft--; // decrement guess counter for incorrect response
       console.log('triesLeft', triesLeft);
       if (triesLeft === 0) {
         alert('That was a tough one. ' + correctCities);
