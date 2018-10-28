@@ -1,21 +1,22 @@
 'use strict';
 
-// // Greet visitor and find out his/her name.
-var userName = prompt('Hello! My name is Gwen - what\'s yours?');
+// Greet visitor and find out his/her name.
+var userName = prompt('Hello! Let\'s get to know one another. What\'s your name?');
 alert('Welcome, ' + userName + '! I\'m so glad you\'ve stopped by for a visit.  Heads up, ' + userName + '...there are questions ahead to see how well you know me! You can answer with \'yes\', \'no\', \'y\', or \'n\' (but it isn\'t case sensitive, so you can yell if you want to). See this blue button below that says "OK"? Click it when you\'re ready to test your Gwen Trivia.');
 
 var totalCorrect = 0;
 
+// Ask first 5 questions
 for(var i=1; i<6; i++) {
   totalCorrect += firstFiveQuestions(i);
 }
 
-// Reset user instructions
+// Reset user instructions for q6-7
 alert('Whew... those were tough! But you can handle more. The next questions are a bit tougher because they aren\'t yes or no. I\'ll give you a few chances for each to be fair. Ready?');
 console.log ('totalCorrect', totalCorrect);
 totalCorrect += questionBoeing();
 console.log ('totalCorrect', totalCorrect);
-totalCorrect += questionCities();
+totalCorrect += questionAirplanes();
 console.log ('totalCorrect', totalCorrect);
 
 // alert('Congrats, ' + userName + '! You got ' + totalCorrect + ' answers correct.');
@@ -30,28 +31,27 @@ if (totalCorrect>=4) {
 function firstFiveQuestions (arraysIndex) {
   //array for questions
   var questions = [0, 
-    'Is my middle name \'Yvonne\'?', 
-    'Was I born in Texas?', 
-    'Did I go to college?', 
-    'Do I have 2 kids?', 
-    'Will I get married in Hawaii?'];
+    'Have I earned a bachelor\'s degree?', 
+    'As an engineer, have I worked only in aerospace?', 
+    'Have I received formal training in engineering and technical leadership?', 
+    'Have I led multi-disciplinary teams?', 
+    'Will I remain within my current expertise until retirement?'];
   console.log(questions);
   //array for answers
   var correctAnswers = [0, 
     'YES', 
-    'YES', 
-    'YES', 
     'NO', 
+    'YES', 
+    'YES', 
     'NO'];
     //array for positive feedback to user
-  var positiveFeedback = [0, 
-    ' My middle name is indeed \'Yvonne\'. I think my mother was heavily drugged when she named me.', 
-    ' I was born in Houston. Almost in a taxi, in fact.  How cliche...', 
+  var moreDeets = [0, 
     ' I studied Mechanical Engineering at The University of Texas at Austin.  And I ROCKED it.', 
-    ' I have 3 including my stepchildren! They\'re all grown and gone...sad face.', 
-    ' In fact, my dear friends will be married in Hawaii in March, just 2 weeks before I\'m married in FIJI (squeeeee!). I\'ll be on the first flight to Honolulu after I graduate from Code 401!'];
-    // canned response for right answer - to be appended with more specific detail in 'positiveFeedback[]'
-  var correct = 'That\'s right! (Wait...did you peek at the answer?)';
+    ' Before university, I explored mechanical drafting and design in areas including industrial food processing equipment, silicon wafer processing products, and military specialty tools research and development.  Those experiences readied me for both educational and follow-on career opportunities.', 
+    ' Not only did did I graduate from the Leadership | Development | Excellence (LDE) program at Boeing, I also earned an Engineering Leadership certificate from University of Washington\'s Professional & Continuing Education (PCE) school.', 
+    ' I\'ve earned and enjoyed a steep upward trajectory in my career. At Boeing, I led mechanical, aerospace, and electrical engineers covering an assortment of airplane environmental control systems. My Greenpoint team consisted primarily of mechanical engineers, but spanning both systems and structural disciplines. At HKX, I directed all of Engineering and Technical Publications.', 
+    ' I have a deeply ingrained need for personal growth. At the moment, I\'ve endeavored to add software development to my list of skills, and I\'ve no doubt that I\'ll add a few more before I call it quits.'];
+    // canned response for right answer - to be appended with more specific detail in 'moreDeets[]'
   console.log('response', response); // confirm that user response is accepted into var 'response'
   
   // initiate and confirm correct answer tallying
@@ -62,13 +62,13 @@ function firstFiveQuestions (arraysIndex) {
   
   //check response against correct answer
   if (response === correctAnswers[arraysIndex].substring(0,1) || response === correctAnswers[arraysIndex]) {  //use truncated answer to accommodate shorthand response
-    // correct response - give positive feedback to user
-    alert(correct + positiveFeedback[arraysIndex]);
+    // correct response - give feedback and 'moreDeets' to user
+    alert('That\'s right! (Wait...did you peek?)' + moreDeets[arraysIndex]);
     correctTally++;
     console.log('correctTally', correctTally);
   } else {
-    // incorrect response - give 'constructive' feedback to user
-    alert('Awww...too bad. It\'s like you don\'t even know me.');
+    // incorrect response - give feedback and 'moreDeets' to user
+    alert('Awww...too bad. It\'s like you don\'t even know me.' + moreDeets[arraysIndex]);
   }
   // return 0 for incorrect and 1 for correct (to be added to 'totalCorrect' for final tally)
   console.log('correctTally', correctTally);
@@ -113,32 +113,35 @@ function questionBoeing() {  // this is 'question 6' in the assignment
   return correctTally;
 }
 
-// Question about cities
-function questionCities () {   // this is 'question 7' in the assignment
+// Question about airplanes
+function questionAirplanes () {   // this is 'question 7' in the assignment
   var correctTally = 0; // total correct tally for return to main code
   console.log('correctTally', correctTally);
-  console.log('answerCities', answerCities);
+  console.log('answerAirplanes', answerAirplanes);
   console.log('triesLeft', triesLeft);
   var triesLeft = 6; // set initial guess counter for this question
   console.log('triesLeft', triesLeft);
-  var cities = ['KIRKLAND', 'MILL CREEK', 'SNOHOMISH', 'LYNNWOOD']; // acceptable responses
-  var answerCities = prompt('Can you name a Washington city where I\'ve lived? (You have ' + triesLeft + ' tries.)').toUpperCase(); //initial prompt; burns 1st try
+  var airplanes = ['777-200', '777-300', '747-400', '767-300F', 'KC-46A']; // acceptable responses
+  console.log(airplanes[0], ', ', airplanes[1], ', ',  airplanes[2], ', ',  airplanes[3], ', ',  airplanes[4])
+  var answerAirplanes = 0;
+  var answerAirplanes = prompt('Can you name a Boeing airplane program that I worked on? (You have ' + triesLeft + ' tries.)').toUpperCase(); //initial prompt; burns 1st try
   console.log('triesLeft', triesLeft);
   triesLeft--; // decrement guess counter for initial response
   console.log('triesLeft', triesLeft);
-  var correctCities = ('I\'ve called Mill Creek, Snohomish, and Kirkland home since moving to Washington in 2008.');
-  console.log('answerCities', answerCities);
+  var correctAirplanes = ('During my Boeing tenure, I worked on the ' + airplanes[0] + ', the ' + airplanes[1] + ', the ' + airplanes[2] + ', the ' + airplanes[3] + ', and the ' + airplanes[4] + '. What a phenomenal experience that was!');
+  console.log('answerAirplanes', answerAirplanes);
   
-  // Answer evaluation and response for question about cities
+  // Answer evaluation and response for question about airplanes
   while(triesLeft > 0) {
-    answerCities = prompt('I haven\'t lived in ' + answerCities + '. Try again - you\'ve got ' + triesLeft + ' tries left.').toUpperCase();
-    switch(answerCities) {   // since array is short (4 elements), used switch instead of for to reduce array traversals; would use for loop for array that's long or indeterminate size
-    case cities[0]:
-    case cities[1]:
-    case cities[2]:
-    case cities[3]:
+    answerAirplanes = prompt('I didn\'t work on the ' + answerAirplanes + '. Try again - you\'ve got ' + triesLeft + ' tries left.').toUpperCase();
+    switch(answerAirplanes) {   // since array is short (4 elements), used switch instead of for to reduce array traversals; would use for loop for array that's long or indeterminate size
+    case airplanes[0]:
+    case airplanes[1]:
+    case airplanes[2]:
+    case airplanes[3]:
+    case airplanes[4]:
       console.log('entered case cities');
-      alert('Yep! ' + correctCities);
+      alert('Yep! ' + correctAirplanes);
       console.log ('before correct tally');
       correctTally++; // iterate tally since response is correct
       console.log ('after correct tally');
@@ -150,7 +153,7 @@ function questionCities () {   // this is 'question 7' in the assignment
       triesLeft--; // decrement guess counter for incorrect response
       console.log('triesLeft', triesLeft);
       if (triesLeft === 0) {
-        alert('That was a tough one. ' + correctCities);
+        alert('That was a tough one. ' + correctAirplanes);
       }
     }
   }
