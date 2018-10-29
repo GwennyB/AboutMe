@@ -117,44 +117,33 @@ function questionBoeing() {  // this is 'question 6' in the assignment
 function questionAirplanes () {   // this is 'question 7' in the assignment
   var correctTally = 0; // total correct tally for return to main code
   console.log('correctTally', correctTally);
-  console.log('answerAirplanes', answerAirplanes);
-  console.log('triesLeft', triesLeft);
-  var triesLeft = 6; // set initial guess counter for this question
-  console.log('triesLeft', triesLeft);
   var airplanes = ['777-200', '777-300', '747-400', '767-300F', 'KC-46A']; // acceptable responses
-  console.log(airplanes[0], ', ', airplanes[1], ', ',  airplanes[2], ', ',  airplanes[3], ', ',  airplanes[4])
-  var answerAirplanes = 0;
-  var answerAirplanes = prompt('Can you name a Boeing airplane program that I worked on? (You have ' + triesLeft + ' tries.)').toUpperCase(); //initial prompt; burns 1st try
+  var triesLeft = 6; // first decrement after answer comparison
   console.log('triesLeft', triesLeft);
-  triesLeft--; // decrement guess counter for initial response
-  console.log('triesLeft', triesLeft);
-  var correctAirplanes = ('During my Boeing tenure, I worked on the ' + airplanes[0] + ', the ' + airplanes[1] + ', the ' + airplanes[2] + ', the ' + airplanes[3] + ', and the ' + airplanes[4] + '. What a phenomenal experience that was!');
+  var answerAirplanes = prompt('Can you name a Boeing airplane program that I worked on? (You have ' + triesLeft + ' tries.)').toUpperCase(); 
   console.log('answerAirplanes', answerAirplanes);
+  var correctAirplanes = ('During my Boeing tenure, I worked on the ' + airplanes[0] + ', the ' + airplanes[1] + ', the ' + airplanes[2] + ', the ' + airplanes[3] + ', and the ' + airplanes[4] + '. What a phenomenal experience that was!');
   
   // Answer evaluation and response for question about airplanes
-  while(triesLeft > 0) {
-    answerAirplanes = prompt('I didn\'t work on the ' + answerAirplanes + '. Try again - you\'ve got ' + triesLeft + ' tries left.').toUpperCase();
-    switch(answerAirplanes) {   // since array is short (4 elements), used switch instead of for to reduce array traversals; would use for loop for array that's long or indeterminate size
-    case airplanes[0]:
-    case airplanes[1]:
-    case airplanes[2]:
-    case airplanes[3]:
-    case airplanes[4]:
-      console.log('entered case cities');
-      alert('Yep! ' + correctAirplanes);
-      console.log ('before correct tally');
-      correctTally++; // iterate tally since response is correct
-      console.log ('after correct tally');
-      console.log('correctTally', correctTally);
-      triesLeft = 0; // eject from while loop
-      break;
-    default:
-      console.log('triesLeft', triesLeft);
-      triesLeft--; // decrement guess counter for incorrect response
-      console.log('triesLeft', triesLeft);
-      if (triesLeft === 0) {
-        alert('That was a tough one. ' + correctAirplanes);
+  while(triesLeft > 1 && !correctTally) {
+    triesLeft--; // decrement guess counter 
+    console.log('triesLeft', triesLeft);
+    for (var traverse = 0; traverse < airplanes.length; traverse++) {
+      console.log(airplanes[traverse].substring(0,3));
+      if (answerAirplanes === airplanes[traverse] || answerAirplanes === airplanes[traverse].substring(0,3)) {
+        correctTally++;
+        console.log('correctTally', correctTally);
+        break;
       }
+    }
+    
+    if (correctTally) {
+      alert('Yep! ' + correctAirplanes);
+    } else if (!triesLeft) {
+      alert('You\'re out of guesses...that was a tough one! ' + correctAirplanes);
+    } else {
+      answerAirplanes = prompt('I didn\'t work on the ' + answerAirplanes + '. Try again - you\'ve got ' + triesLeft + ' tries left.').toUpperCase();
+      console.log('answerAirplanes', answerAirplanes);
     }
   }
   return correctTally;

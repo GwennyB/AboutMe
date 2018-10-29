@@ -4,9 +4,10 @@
 } */
 
 body {
-    background-color: rgb(175, 252, 207);
+    background-color: rgb(252, 227, 213);
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(58, 107, 87);
+    font-size: 18px;
+    color: rgb(97, 47, 47);
 }
 
 header {
@@ -28,12 +29,19 @@ header h2 {
 
 #sculptureGarden {
     width: 50%;
-    float: left;
-    border: 5px solid rgb(58, 107, 87);
+    border: 5px solid rgb(97, 47, 47);
+}
+
+nav {
+    box-sizing: border-box;
+    padding-top: 100px;
+    width: 48%;
+    float: right;
 }
 
 nav ul {
-    padding-top: 100px;
+    margin: 0px;
+    list-style-type: none;
 }
 
 nav ul li {
@@ -43,31 +51,38 @@ nav ul li {
     font-weight: bolder;
 }
 
+footer {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    box-sizing: border-box;
+    width: 100%;   
+}
+
+footer h2 {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+}
+
+#smiley {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30px 45% 0px 45%;
+}
+
 #funFacts {
     box-sizing: border-box;
     width: 100%;
     margin-top: 40px;
     padding: 20px;
     background-image: url(https://thumb1.shutterstock.com/mosaic_250/163225782/747618916/stock-photo-vintage-whitewash-painted-rustic-old-wood-plank-wall-textured-background-faded-washed-natural-wood-747618916.jpg);
-    float: left;
 }
 
-footer {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    box-sizing: border-box;
-    float: left;
-    width: 100%;
 
+a:link {
+    color: rgb(43, 124, 97);
 }
 
-#mailme {
-    text-align: center;
-}
-
-#smiley {
-    /* background-color: white; */
-    box-sizing: border-box;
-    width: 100%;
-    padding: 30px 45% 0px 45%;
+a:visited {
+    color: rgb(97, 47, 47);
 }
